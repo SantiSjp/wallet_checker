@@ -1,0 +1,21 @@
+# Ignore o diretório do ambiente virtual
+venv/
+.env/
+.venv/
+
+# Ignore arquivos específicos do Python
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+# Ignore arquivos de configuração do editor/IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Ignore arquivos de logs e dependências locais
+pip-log.txt
+pip-delete-this-directory.txt
+.env
