@@ -39,7 +39,7 @@ CONTRACT_ABI_ERC1155 = [
 # Inicialize Web3
 w3 = Web3(Web3.HTTPProvider(MONAD_RPC))
 
-# Converte address to checksum
+# Convert address to checksum
 NFT_CONTRACT = Web3.to_checksum_address(NFT_CONTRACT)
 
 # Bot Config
@@ -148,16 +148,16 @@ async def verify_wallet(interaction: discord.Interaction, carteira: str):
 
         if balance > 0:
             await assing_role(interaction, ROLE_NAME)
-            await interaction.response.send_message(f"✅ You own `{balance}` Sky Guardian NFTs and have been verified! 🎉", ephemeral=True)
+            await interaction.response.send_message(f"✅ You own `{balance}` PROJECT NAME NFT and have been verified! 🎉", ephemeral=True)
         else:
-            await interaction.response.send_message(f"❌ You do not own 5 Sky Guardian NFTs.", ephemeral=True)
+            await interaction.response.send_message(f"❌ You do not own PROJECT NAME NFT.", ephemeral=True)
 
     except Exception as e:
         logging.error(f"Unexpected error: {e}")
         await interaction.response.send_message(f"⚠️ Unexpected error: {str(e)}", ephemeral=True)
 
 async def assing_role(interaction: discord.Interaction, role_name: str):
-    """Assigns the role to the user if they own NFTs."""
+    """Assigns the role to the user if they own NFT."""
     guild = interaction.guild
     member = interaction.user
 
@@ -173,8 +173,8 @@ async def panel(ctx):
         description="1️⃣ Click **Link Your Wallet** to register your wallet.\n"
                     "2️⃣ Send MON to yourself to verify ownership.\n"
                     "3️⃣ Click **Submit Transaction** and enter the transaction hash.\n"
-                    "4️⃣ If verified, you will receive the **Early Holder** role. \n"
-                    "PS: You must be the holder of at least 5 Sky Guardian NFTs.",
+                    "4️⃣ If verified, you will receive the **ROLE NAME** role. \n"
+                    "PS: You must be the holder of PROJECT NAME NFT.",
         color=discord.Color.blue()
     )
     await ctx.send(embed=embed, view=VerifyView())
